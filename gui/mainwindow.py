@@ -50,7 +50,45 @@ class Gui:
     def on_mit_exit_activate(self, widget):
         gtk.main_quit()
 
+    def on_mit_new_activate(self, widget):
+        print 'new'
+
+    def on_mit_setdim_activate(self, widget):
+        self.wtree.get_widget('dlg_setdim').show()
+        
+    def on_mit_setstep_activate(self, widget):
+        self.wtree.get_widget('dlg_setstep').show()
+
+    def on_mit_setseed_activate(self, widget):
+        self.wtree.get_widget('dlg_setseed').show()
+
+    def on_mit_addnode_activate(self, widget):
+        print 'addnode'
+
+    def on_mit_addnodegroup_activate(self, widget):
+        print 'addnodegroup'
+
+    def on_btn_setdim_canc_clicked(self, widget):
+        self.wtree.get_widget('dlg_setdim').hide()
+
+    def on_btn_setdim_apply_clicked(self, widget):
+        print self.wtree.get_widget('hsl_dimx').get_value()
+        self.wtree.get_widget('dlg_setdim').hide()
+
+    def on_btn_setstep_canc_clicked(self, widget):
+        self.wtree.get_widget('dlg_setstep').hide()
+
+    def on_btn_setstep_apply_clicked(self, widget):
+        print self.wtree.get_widget('hsl_step').get_value()
+        self.wtree.get_widget('dlg_setstep').hide()
+
+    def on_btn_setseed_canc_clicked(self, widget):
+        self.wtree.get_widget('dlg_setseed').hide()
+
+    def on_btn_setseed_apply_clicked(self, widget):
+        print self.wtree.get_widget('hsl_seed').get_value()
+        self.wtree.get_widget('dlg_setseed').hide()
+
 if __name__ == "__main__":
     gui = Gui()
-
     main()
